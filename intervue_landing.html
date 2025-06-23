@@ -17,19 +17,33 @@
     <!-- Header -->
     <header class="flex justify-between items-center p-4">
       <img src="https://d2b1cooxpkirg1.cloudfront.net/publicAssets/intervue.svg" alt="Intervue Logo" class="h-6 mx-10" />
-      <nav class="flex items-center space-x-4 text-sm mx-10">
+      <!-- Mobile menu button -->
+      <button id="menu-btn" class="md:hidden text-gray-800 focus:outline-none mx-4" aria-label="Toggle menu">
+        <i id="menu-icon" class="fas fa-bars text-2xl"></i>
+      </button>
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center space-x-4 text-sm mx-10 p-10">
         <a href="#" class="flex items-center gap-1 font-semibold hover:underline">
     <i class="fas fa-user text-sm"></i>
     Become an Interviewer
     <i class="fas fa-arrow-up-right-from-square text-xs ml-1"></i>
   </a>
-        <a href="#" class="hover:underline">features</a>
-        <a href="#" class="hover:underline">Pricing</a>
-        <a href="#" class="hover:underline">Start a trial</a>
-        <button class="border border-black px-4 py-1">Login</button>
+        <a href="#" class="hover:underline pr-5">features</a>
+        <a href="#" class="hover:underline pr-5">Pricing</a>
+        <a href="#" class="hover:underline pr-5">Start a trial</a>
+        <button class="border border-black px-4 py-1 mx-2">Login</button>
         <button class="bg-black text-white px-4 py-1.5">Signup</button>
       </nav>
     </header>
+    <!-- Mobile nav -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pb-4 space-y-2">
+      <a href="#" class="block py-1 hover:underline">Become an Interviewer</a>
+      <a href="#" class="block py-1 hover:underline">Features</a>
+      <a href="#" class="block py-1 hover:underline">Pricing</a>
+      <a href="#" class="block py-1 hover:underline">Start a trial</a>
+      <button class="w-full text-left border px-4 py-1 rounded">Login</button>
+      <button class="w-full text-left bg-black text-white px-4 py-1 rounded">Signup</button>
+    </div>
 
     <!-- Hero Section -->
 <section class="text-center py-12 font-[Sora]">
@@ -124,7 +138,10 @@
         <h2 class="mt-2 font-semibold">Design a Free Food App</h2>
         <p class="text-sm text-gray-600 mt-1">We created this guide after speaking with our community of interviewers, which includes over 100 current and former Amazon engineers, as well as our corpus of mock interviews.</p>
       </div>
-      <!-- Duplicate this div for each level (Easy, Medium, Hard) -->
+
+
+
+
     </section>
 
     <div class="mt-[25em]">
@@ -165,7 +182,7 @@
 
     <!-- Card 3 -->
     <div class="space-y-4 font-[Sora]">
-  <!-- Intervue for Startups -->
+  <!-- Intervue for Startups part -->
   <div class="flex items-center justify-between bg-white shadow-sm p-5 rounded w-full">
     <div class="grid items-center gap-6">
       <i class="fas fa-rocket text-4xl text-black my-4"></i>
@@ -176,7 +193,7 @@
         </div>
   </div>
 
-  <!-- Intervue for Enterprises -->
+  <!-- Intervue for Enterprises part -->
   <div class="flex items-center justify-between bg-white shadow-sm p-5 rounded w-full">
     <div class="grid items-center gap-6">
       <i class="fas fa-globe text-4xl text-black my-4"></i>
@@ -190,10 +207,10 @@
   </div>
 </section>
 
-<!-- Testimonial Section -->
+<!-- Testimonial Section paet -->
 <section class="bg-white py-16 px-4 font-[Sora]">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-    <!-- Video Section -->
+    <!-- Video section images -->
     <div class="relative">
       <img src="https://d2b1cooxpkirg1.cloudfront.net/publicAssets/homepage/testimonials/yubi.webp" alt="Niket Gupta" class="rounded-r-full w-full object-cover">
       <div class="absolute inset-0 flex items-center justify-center">
@@ -310,85 +327,166 @@
 </section>
 
 
-    <!-- Footer -->
     <footer class="bg-[#1f1f21] text-white font-[Sora] px-6 md:px-16 py-12">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
+  <div class="max-w-7xl mx-auto">
 
-    <!-- Left Section -->
-    <div class="col-span-2">
-      <!-- Logo -->
-      <img src="https://uploads-ssl.webflow.com/608e9cc36cbcc089f0998643/648175fc7332de3fb931061a_intervue.svg" alt="Intervue Logo" class="h-6 mb-4" />
+    <!-- Logo + CTA (visible on all screens) -->
+    <div class="flex flex-col gap-6 md:gap-10 md:flex-row md:justify-between md:items-start mb-10">
+      <!-- Logo + Social + Email -->
+      <div class="md:w-2/5">
+        <img src="https://uploads-ssl.webflow.com/608e9cc36cbcc089f0998643/648175fc7332de3fb931061a_intervue.svg" alt="Intervue Logo" class="h-6 mb-4" />
 
-      <!-- Social Links -->
-      <div class="flex gap-6 text-sm text-gray-300 mb-8">
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Pinterest</a>
+        <div class="flex gap-6 text-sm text-gray-300 mb-6 hidden md:flex">
+          <a href="https://www.facebook.com/intervue.io">Facebook</a>
+          <a href="https://instagram.com/intervue.io">Instagram</a>
+          <a href="https://www.linkedin.com/company/intervue-io/">LinkedIn</a>
+          <a href="https://twitter.com/IntervueIo">X</a>
+        </div>
+
+        <div>
+          <p class="text-yellow-200 font-semibold mb-2">Hire better &amp; faster</p>
+          <div class="relative">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              class="bg-transparent border-b border-gray-500 placeholder-gray-400 pr-8 w-full outline-none text-sm"
+            />
+            <i class="fas fa-arrow-up-right-from-square absolute right-0 top-1 text-[#fbbf24] text-xs"></i>
+          </div>
+        </div>
       </div>
 
-      <!-- Email CTA -->
-      <div>
-        <p class="text-[#fbbf24] font-semibold mb-2">Hire better &amp; faster</p>
-        <div class="relative">
-          <input
-            type="email"
-            placeholder="Enter your email address"
-            class="bg-transparent border-b border-gray-500 placeholder-gray-400 pr-8 w-full outline-none text-sm"
-          />
-          <i class="fas fa-arrow-up-right-from-square absolute right-0 top-1 text-[#fbbf24] text-xs"></i>
+      <!-- Desktop Grid -->
+      <div class="hidden md:grid grid-cols-3 gap-10 w-3/5">
+        <!-- Company -->
+        <div>
+          <h3 class="font-semibold text-sm mb-3">Company</h3>
+          <ul class="text-gray-300 text-sm space-y-2">
+            <li><a href="#">So gehts</a></li>
+            <li><a href="#">Erfahrung</a></li>
+            <li><a href="#">Aligner</a></li>
+            <li><a href="#">Preise</a></li>
+            <li><a href="#">Standorte</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h3 class="font-semibold text-sm mb-3">Resources</h3>
+          <ul class="text-gray-300 text-sm space-y-2">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Lift Media</a></li>
+            <li><a href="#">Offene Stellen</a></li>
+            <li><a href="#">Presse kit</a></li>
+          </ul>
+        </div>
+
+        <!-- Product -->
+        <div>
+          <h3 class="font-semibold text-sm mb-3">Product</h3>
+          <ul class="text-gray-300 text-sm space-y-2">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Lift Media</a></li>
+            <li><a href="#">Offene Stellen</a></li>
+            <li><a href="#">Presse kit</a></li>
+          </ul>
         </div>
       </div>
     </div>
 
-    <!-- Column: Company -->
-    <div>
-      <h3 class="font-semibold text-sm mb-3">Company</h3>
-      <ul class="text-gray-300 text-sm space-y-2">
-        <li><a href="#">So gehts</a></li>
-        <li><a href="#">Erfahrung</a></li>
-        <li><a href="#">Aligner</a></li>
-        <li><a href="#">Preise</a></li>
-        <li><a href="#">Standorte</a></li>
-      </ul>
+    <!-- Mobile Layout (hidden on md and up) -->
+    <div class="grid grid-cols-2 gap-10 md:hidden">
+      <!-- Menu 1 -->
+      <div>
+        <h3 class="font-semibold text-sm mb-3">Menu</h3>
+        <ul class="text-gray-300 text-sm space-y-2">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Case studies</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Downloads</a></li>
+          <li><a href="#">Updates</a></li>
+          <li><a href="#">Changelog</a></li>
+        </ul>
+      </div>
+
+      <!-- Company 1 -->
+      <div>
+        <h3 class="font-semibold text-sm mb-3">Company</h3>
+        <ul class="text-gray-300 text-sm space-y-2">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Culture</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Legal</a></li>
+        </ul>
+      </div>
+
+      <!-- Menu 2 -->
+      <div>
+        <h3 class="font-semibold text-sm mb-3">Menu</h3>
+        <ul class="text-gray-300 text-sm space-y-2">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Case studies</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Downloads</a></li>
+          <li><a href="#">Updates</a></li>
+          <li><a href="#">Changelog</a></li>
+        </ul>
+      </div>
+
+      <!-- Company 2 -->
+      <div>
+        <h3 class="font-semibold text-sm mb-3">Company</h3>
+        <ul class="text-gray-300 text-sm space-y-2">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Culture</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Legal</a></li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Column: Resources -->
-    <div>
-      <h3 class="font-semibold text-sm mb-3">Resources</h3>
-      <ul class="text-gray-300 text-sm space-y-2">
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Lift Media</a></li>
-        <li><a href="#">Offene Stellen</a></li>
-        <li><a href="#">Presse kit</a></li>
-      </ul>
+    <!-- Social Icons (Mobile only) -->
+    <div class="md:hidden flex justify-center gap-4 mt-8">
+      <a href="#" class="bg-gray-700 p-2 rounded-full"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="bg-gray-700 p-2 rounded-full"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="bg-gray-700 p-2 rounded-full"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="bg-gray-700 p-2 rounded-full"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="bg-gray-700 p-2 rounded-full"><i class="fab fa-youtube"></i></a>
     </div>
 
-    <!-- Column: Product (duplicated) -->
-    <div>
-      <h3 class="font-semibold text-sm mb-3">Product</h3>
-      <ul class="text-gray-300 text-sm space-y-2">
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Lift Media</a></li>
-        <li><a href="#">Offene Stellen</a></li>
-        <li><a href="#">Presse kit</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Bottom bar -->
-  <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-gray-700 flex flex-col md:flex-row justify-between text-xs text-gray-400">
-    <p>© 2023 Intervue. Crafted by great minds.</p>
-    <div class="flex gap-4 mt-4 md:mt-0">
-      <a href="#">Datenschutz</a>
-      <a href="#">Impressum</a>
-      <a href="#">Cookie Policy</a>
-      <a href="#">AGBs</a>
+    <!-- Footer Bottom -->
+    <div class="mt-12 pt-6 border-t border-gray-700 flex flex-col md:flex-row justify-between text-xs text-gray-400 text-center md:text-left">
+      <p>© 2023 Intervue. Crafted by great minds.</p>
+      <div class="flex justify-center gap-4 mt-4 md:mt-0">
+        <a href="#">Datenschutz</a>
+        <a href="#">Impressum</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">AGBs</a>
+      </div>
     </div>
   </div>
 </footer>
 
+
+  <script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('menu-icon');
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
+  });
+</script>
   </body>
 </html>
